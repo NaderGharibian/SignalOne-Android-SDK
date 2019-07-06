@@ -1,0 +1,226 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:1:1-105:12
+INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:1:1-105:12
+MERGED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:1:1-105:12
+INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:1:1-23:12
+	package
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml
+		INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml
+	xmlns:tools
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:3:5-51
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:2:5-63
+uses-permission#android.permission.INTERNET
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:10:22-64
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:11:5-82
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:11:22-79
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:14:5-68
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:14:22-65
+uses-permission#android.permission.VIBRATE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:18:5-66
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:18:22-63
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:20:22-76
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:25:5-81
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:25:22-78
+uses-permission#com.sec.android.provider.badge.permission.READ
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:29:5-85
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:29:22-83
+uses-permission#com.sec.android.provider.badge.permission.WRITE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:30:5-86
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:30:22-84
+uses-permission#com.htc.launcher.permission.READ_SETTINGS
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:33:5-80
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:33:22-78
+uses-permission#com.htc.launcher.permission.UPDATE_SHORTCUT
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:34:5-82
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:34:22-80
+uses-permission#com.sonyericsson.home.permission.BROADCAST_BADGE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:37:5-87
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:37:22-85
+uses-permission#com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:38:5-91
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:38:22-89
+uses-permission#com.anddoes.launcher.permission.UPDATE_COUNT
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:41:5-83
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:41:22-81
+uses-permission#com.majeur.launcher.permission.UPDATE_BADGE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:44:5-82
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:44:22-80
+uses-permission#com.huawei.android.launcher.permission.CHANGE_BADGE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:47:5-91
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:47:22-88
+uses-permission#com.huawei.android.launcher.permission.READ_SETTINGS
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:48:5-92
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:48:22-89
+uses-permission#com.huawei.android.launcher.permission.WRITE_SETTINGS
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:49:5-93
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:49:22-90
+uses-permission#android.permission.READ_APP_BADGE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:52:5-72
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:52:22-70
+uses-permission#com.oppo.launcher.permission.READ_SETTINGS
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:55:5-81
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:55:22-79
+uses-permission#com.oppo.launcher.permission.WRITE_SETTINGS
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:56:5-82
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:56:22-80
+uses-permission#me.everything.badger.permission.BADGE_COUNT_READ
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:59:5-87
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:59:22-85
+uses-permission#me.everything.badger.permission.BADGE_COUNT_WRITE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:60:5-88
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:60:22-86
+application
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:64:5-101:19
+MERGED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:64:5-101:19
+MERGED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:64:5-101:19
+receiver#com.signalone.NotificationOpenedReceiver
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:65:9-77
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:65:19-74
+service#com.signalone.GcmIntentService
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:67:9-66
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:67:18-63
+service#com.signalone.GcmIntentJobService
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:68:9-69:72
+	android:permission
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:69:13-69
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:68:18-66
+service#com.signalone.RestoreJobService
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:71:9-72:72
+	android:permission
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:72:13-69
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:71:18-64
+service#com.signalone.RestoreKickoffJobService
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:74:9-75:72
+	android:permission
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:75:13-69
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:74:18-71
+service#com.signalone.SyncService
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:77:9-89
+	android:stopWithTask
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:77:59-86
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:77:18-58
+service#com.signalone.SyncJobService
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:78:9-79:72
+	android:permission
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:79:13-69
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:78:18-61
+activity#com.signalone.PermissionsActivity
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:81:9-82:75
+	android:theme
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:82:13-72
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:81:19-67
+service#com.signalone.NotificationRestoreService
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:84:9-76
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:84:18-73
+receiver#com.signalone.BootUpReceiver
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:90:9-95:20
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:90:19-62
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:91:13-94:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:92:17-79
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:92:25-76
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:93:17-82
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:93:25-79
+receiver#com.signalone.UpgradeReceiver
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:96:9-100:20
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:96:19-63
+intent-filter#action:name:android.intent.action.MY_PACKAGE_REPLACED
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:97:13-99:29
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:98:17-84
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml:98:25-81
+uses-sdk
+INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml
+INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\main\AndroidManifest.xml
+		INJECTED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:4:5-110
+	android:protectionLevel
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:4:72-107
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:4:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:5:22-76
+meta-data#onesignal_app_id
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:8:9-90
+	android:value
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:8:52-87
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:8:20-51
+meta-data#onesignal_google_project_number
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:10:9-124
+	android:value
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:10:67-121
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:10:20-66
+receiver#com.signalone.GcmBroadcastReceiver
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:12:9-20:20
+	android:permission
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:14:13-73
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:13:13-62
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:${applicationId}
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:16:13-19:29
+	android:priority
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:16:28-50
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:17:17-81
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:17:25-78
+category#${applicationId}
+ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:18:17-61
+	android:name
+		ADDED from E:\Project\SignalOne\SignalOneSDK-android\signalone\src\debug\AndroidManifest.xml:18:27-58
