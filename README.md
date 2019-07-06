@@ -3,7 +3,8 @@
 </p>
 
 ### SignalOne Android Push Notification Plugin
-[![](https://jitpack.io/v/NaderGharibian/SignalOne.svg)](https://jitpack.io/#NaderGharibian/SignalOne)
+[![](https://jitpack.io/v/NaderGharibian/SignalOne-Android-SDK.svg)](https://jitpack.io/#NaderGharibian/SignalOne-Android-SDK)
+
 
 
 ---
@@ -34,7 +35,7 @@ android {
                                 
 dependencies {
      // SignalOne SDK
-     implementation 'com.github.NaderGharibian:SignalOne:1.0.3'
+     implementation 'com.github.NaderGharibian:SignalOne-Android-SDK:1.0.4'
 
      // Required for geotagging
     implementation 'com.google.android.gms:play-services-location:15.0.1'
