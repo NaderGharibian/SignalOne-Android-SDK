@@ -60,6 +60,7 @@
         android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="OneSignal Example"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
 
         <!--
@@ -235,6 +236,11 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.onesignal.example.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
     </application>
 
 </manifest>
