@@ -97,7 +97,7 @@ class OneSignalChromeTab {
          if (session == null)
             return;
 
-         Uri uri = Uri.parse("https://onesignal.com/android_frame.html" + mParams);
+         Uri uri = Uri.parse("https://signalone.app/android_frame.html" + mParams);
          session.mayLaunchUrl(uri, null, null);
 
          // Shows tab as it's own Activity
