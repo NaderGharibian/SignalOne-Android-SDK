@@ -210,7 +210,7 @@ public abstract class NotificationExtenderService extends JobIntentService {
 
    static Intent getIntent(Context context) {
       PackageManager packageManager = context.getPackageManager();
-      Intent intent = new Intent().setAction("com.onesignal.NotificationExtender").setPackage(context.getPackageName());
+      Intent intent = new Intent().setAction("com.signalone.NotificationExtender").setPackage(context.getPackageName());
       List<ResolveInfo> resolveInfo = packageManager.queryIntentServices(intent, PackageManager.GET_META_DATA);
       if (resolveInfo.size() < 1)
          return null;
