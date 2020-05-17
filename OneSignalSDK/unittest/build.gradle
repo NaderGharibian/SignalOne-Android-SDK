@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId 'com.onesignal.example'
+        manifestPlaceholders = [onesignal_app_id: 'b2f7f966-d8cc-11e4-bed1-df8f05be55ba',
+                                // Project number pulled from dashboard, local value is ignored
+                                onesignal_google_project_number: 'REMOTE']
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName '1.0'
+        testOptions.unitTests.includeAndroidResources = true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        unitTests.all {
+            maxParallelForks 1
+            maxHeapSize '2048m'
+        }
+    }
+}
+
+tasks.withType(Test) {
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams false // Enable to have logging print
+    }
+}
+
+dependencies {
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Use local onesignal SDK
+    implementation(project(':onesignal'))
+
+    // Required to shadow firebase analytics classes
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:4.3.1'
+    testImplementation 'org.awaitility:awaitility:3.1.5'
+}

@@ -1,0 +1,35 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.google.com' }
+        // OneSignal-Gradle-Plugin - Local testing
+//      maven { url uri('../../repo') }
+        // OneSignal-Gradle-Plugin - Public version
+//      maven { url 'https://plugins.gradle.org/m2/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+
+        classpath 'com.google.gms:google-services:4.3.2'
+
+        // OneSignal-Gradle-Plugin - Local testing
+        // classpath 'com.onesignal:onesignal-gradle-plugin:[0.8.1, 0.99.99]'
+
+        // OneSignal-Gradle-Plugin - Public version
+        // classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.8.1, 0.99.99]'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+        maven { url 'https://maven.google.com' }
+    }
+}
