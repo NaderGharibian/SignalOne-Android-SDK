@@ -1,112 +1,31 @@
 <p align="center">
-  <img src="https://signalone.app/assets/common/logo_signalone_color.png"/>
+  <img src="https://media.onesignal.com/cms/Website%20Layout/logo-red.svg"/>
 </p>
 
-### SignalOne Android Push Notification Plugin
-[![](https://jitpack.io/v/NaderGharibian/SignalOne-Android-SDK.svg)](https://jitpack.io/#NaderGharibian/SignalOne-Android-SDK)
-
-
+### OneSignal Android Push Notification Plugin
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.onesignal/OneSignal/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.onesignal/OneSignal) [![Build Status](https://travis-ci.org/OneSignal/OneSignal-Android-SDK.svg?branch=master)](https://travis-ci.org/OneSignal/OneSignal-Android-SDK)
 
 ---
 
-[SignalOne.app](https://signalone.app/) is a free push notification service for mobile apps. This plugin makes it easy to integrate your native Android or Amazon app with SignalOne.
+[OneSignal](https://onesignal.com/) is a free push notification service for mobile apps. This plugin makes it easy to integrate your native Android or Amazon app with OneSignal.
 
+<p align="center"><img src="https://app.onesignal.com/images/android_notification_image.gif" width="400" alt="Android Notification"></p>
 
+#### Installation
+See OneSignal's [Android Native SDK Setup Guide](https://documentation.onesignal.com/docs/android-sdk-setup) for documentation.
 
-How to Use
--------------
+#### API
+See OneSignal's [Android Native SDK API](https://documentation.onesignal.com/docs/android-native-sdk) page for a list of all available methods.
 
-#Android
+#### Change Log
+See this repository's [release tags](https://github.com/OneSignal/OneSignal-Android-SDK/releases) for a complete change log of every released version.
 
+#### Support
+Please visit this repository's [Github issue tracker](https://github.com/OneSignal/OneSignal-Android-SDK/issues) for feature requests and bug reports related specificly to the SDK.
+For account issues and support please contact OneSignal support from the [OneSignal.com](https://onesignal.com) dashboard.
 
- Include the SignalOne dependency in app's **build.gradle**
-```gradle
+#### Demo Project
+To make things easier, we have published demo projects in the `/Examples` folder of this repository.
 
-// very top of the build.gradle file
-buildscript {
-    repositories {
-        maven { url 'https://plugins.gradle.org/m2/'}
-    }
-    dependencies {
-        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
-    }
-}
-apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
-
-repositories {
-    maven { url 'https://maven.google.com' }
-}
-
-// android section
-android {
-
-    defaultConfig {
-        // TODO: Please update the OneSignal ID below to yours!
-        manifestPlaceholders = [onesignal_app_id: '********-****-****-****-************',
-                                // Project number pulled from dashboard, local value is ignored.
-                                onesignal_google_project_number: 'REMOTE']
-    }
-}
-
-                                
-dependencies {
-     // SignalOne SDK
-     implementation 'com.github.NaderGharibian:SignalOne-Android-SDK:1.0.5'
-
-     // Required for geotagging
-    implementation 'com.google.android.gms:play-services-location:15.0.1'
-}
-
-
-allprojects {
-    repositories {
-        maven { url 'https://jitpack.io' }
-    }
-}
-
-
-```
-
-
----------------------------------------------------------------------------------------------------------------
-#Rest Api C#
-``` C#
-            var request = WebRequest.Create("https://signalone.app/api/v1/notifications") as HttpWebRequest;
-
-            request.KeepAlive = true;
-            request.Method = "POST";
-            request.ContentType = "application/json; charset=utf-8";
-
-            request.Headers.Add("authorization", "Basic Zgg*****************************************jA5");
-
-            byte[] byteArray = Encoding.UTF8.GetBytes("{"
-                                                    + "\"app_id\": \"********-****-****-****-************\","
-                                                    + "\"contents\": {\"en\": \"test rest api\"},"
-                                                    + "\"included_segments\": [\"All\"]}");
-
-            string responseContent = null;
-
-            try
-            {
-                using (var writer = request.GetRequestStream())
-                {
-                    writer.Write(byteArray, 0, byteArray.Length);
-                }
-
-                using (var response = request.GetResponse() as HttpWebResponse)
-                {
-                    using (var reader = new StreamReader(response.GetResponseStream()))
-                    {
-                        responseContent = reader.ReadToEnd();
-                    }
-                }
-            }
-            catch (WebException ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-                System.Diagnostics.Debug.WriteLine(new StreamReader(ex.Response.GetResponseStream()).ReadToEnd());
-            }
-
-            System.Diagnostics.Debug.WriteLine(responseContent);
-```
-
+#### Supports:
+* Tested from Android 4.0.3 (API level 15) to Android 9.0 (28)
