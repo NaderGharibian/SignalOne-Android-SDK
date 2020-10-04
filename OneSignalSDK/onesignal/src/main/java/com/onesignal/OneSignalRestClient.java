@@ -1,6 +1,6 @@
 /**
  * Modified MIT License
- * 
+ *
  * Copyright 2019 OneSignal
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -9,13 +9,13 @@
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * 1. The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * 2. All copies of substantial portions of the Software may only be used in connection
  * with services provided by OneSignal.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -37,9 +37,18 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.SecureRandom;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.Scanner;
 
 import org.json.JSONObject;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.X509TrustManager;
 
 class OneSignalRestClient {
    static abstract class ResponseHandler {
@@ -53,11 +62,11 @@ class OneSignalRestClient {
    private static final String OS_API_VERSION = "1";
    private static final String OS_ACCEPT_HEADER = "application/vnd.onesignal.v" + OS_API_VERSION + "+json";
    private static final String BASE_URL = "https://api.signalone.app/";
-   
+
    private static final int THREAD_ID = 10000;
    private static final int TIMEOUT = 120_000;
    private static final int GET_TIMEOUT = 60_000;
-   
+
    private static int getThreadTimeout(int timeout) {
       return timeout + 5_000;
    }
@@ -98,21 +107,21 @@ class OneSignalRestClient {
    public static void postSync(String url, JSONObject jsonBody, ResponseHandler responseHandler) {
       makeRequest(url, "POST", jsonBody, responseHandler, TIMEOUT, null);
    }
-   
+
    private static void makeRequest(final String url, final String method, final JSONObject jsonBody, final ResponseHandler responseHandler, final int timeout, final String cacheKey) {
       // If not a GET request, check if the user provided privacy consent if the application is set to require user privacy consent
       if (method != null && OneSignal.shouldLogUserPrivacyConsentErrorMessageForMethodName(null))
          return;
-   
+
       final Thread[] callbackThread = new Thread[1];
       Thread connectionThread = new Thread(new Runnable() {
          public void run() {
             callbackThread[0] = startHTTPConnection(url, method, jsonBody, responseHandler, timeout, cacheKey);
          }
       }, "OS_HTTPConnection");
-      
+
       connectionThread.start();
-      
+
       // getResponseCode() can hang past it's timeout setting so join it's thread to ensure it is timing out.
       try {
          connectionThread.join(getThreadTimeout(timeout));
@@ -124,10 +133,33 @@ class OneSignalRestClient {
          e.printStackTrace();
       }
    }
-   
+
+   private static void trustEveryone() {
+      try {
+         HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier(){
+            public boolean verify(String hostname, SSLSession session) {
+               return true;
+            }});
+         SSLContext context = SSLContext.getInstance("TLS");
+         context.init(null, new X509TrustManager[]{new X509TrustManager(){
+            public void checkClientTrusted(X509Certificate[] chain,
+                                           String authType) throws CertificateException {}
+            public void checkServerTrusted(X509Certificate[] chain,
+                                           String authType) throws CertificateException {}
+            public X509Certificate[] getAcceptedIssuers() {
+               return new X509Certificate[0];
+            }}}, new SecureRandom());
+         HttpsURLConnection.setDefaultSSLSocketFactory(
+                 context.getSocketFactory());
+      } catch (Exception e) { // should never happen
+         e.printStackTrace();
+      }
+   }
+
    private static Thread startHTTPConnection(String url, String method, JSONObject jsonBody, ResponseHandler responseHandler, int timeout, @Nullable String cacheKey) {
+      trustEveryone();
       int httpResponse = -1;
-      HttpURLConnection con = null;
+      HttpsURLConnection con = null;
       Thread callbackThread;
 
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -143,6 +175,7 @@ class OneSignalRestClient {
          con.setReadTimeout(timeout);
          con.setRequestProperty("SDK-Version", "onesignal/android/" + OneSignal.VERSION);
          con.setRequestProperty("Accept", OS_ACCEPT_HEADER);
+
 
          if (jsonBody != null)
             con.setDoInput(true);
@@ -243,49 +276,49 @@ class OneSignalRestClient {
             OneSignal.Log(OneSignal.LOG_LEVEL.INFO, "OneSignalRestClient: Could not send last request, device is offline. Throwable: " + t.getClass().getName());
          else
             OneSignal.Log(OneSignal.LOG_LEVEL.WARN, "OneSignalRestClient: " + method + " Error thrown from network stack. ", t);
-   
+
          callbackThread = callResponseHandlerOnFailure(responseHandler, httpResponse, null, t);
       }
       finally {
          if (con != null)
             con.disconnect();
       }
-      
+
       return callbackThread;
    }
-   
-   
+
+
    // These helper methods run the callback a new thread so they don't count towards the fallback thread join timer.
-   
+
    private static Thread callResponseHandlerOnSuccess(final ResponseHandler handler, final String response) {
       if (handler == null)
          return null;
-      
+
       Thread thread = new Thread(new Runnable() {
          public void run() {
             handler.onSuccess(response);
          }
       }, "OS_REST_SUCCESS_CALLBACK");
       thread.start();
-      
+
       return thread;
    }
-   
+
    private static Thread callResponseHandlerOnFailure(final ResponseHandler handler, final int statusCode, final String response, final Throwable throwable) {
       if (handler == null)
          return null;
-   
+
       Thread thread = new Thread(new Runnable() {
          public void run() {
             handler.onFailure(statusCode, response, throwable);
          }
       }, "OS_REST_FAILURE_CALLBACK");
       thread.start();
-      
+
       return thread;
    }
 
-   private static HttpURLConnection newHttpURLConnection(String url) throws IOException {
-      return (HttpURLConnection)new URL(BASE_URL + url).openConnection();
+   private static HttpsURLConnection newHttpURLConnection(String url) throws IOException {
+      return (HttpsURLConnection)new URL(BASE_URL + url).openConnection();
    }
 }
